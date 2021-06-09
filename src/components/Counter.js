@@ -11,14 +11,14 @@ const Counter = (props) => {
       <br />
       <button onClick={props.increment}>+</button>
       <button onClick={props.decrement}>-</button>
-      <button>reset</button>
+      <button onClick={props.reset}>reset</button>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    count: state.count,
+    count: state.reducerCounter.count,
   };
 };
 
@@ -34,4 +34,6 @@ const mapStateToProps = (state) => {
 
 // export default connect(mapStateToProps, mapDistachToProps)(Counter);
 
-export default connect(mapStateToProps, {increment,decrement, reset})(Counter);
+export default connect(mapStateToProps, { increment, decrement, reset })(
+  Counter
+);
